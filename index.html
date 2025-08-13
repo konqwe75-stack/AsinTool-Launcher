@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ASIN Tool Launcher</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h2>ASIN Tool Launcher</h2>
+
+  <label><strong>Select Region:</strong></label>
+  <select id="region" onchange="updateMarketplaceOptions()">
+    <option value="NA">NA</option>
+    <option value="EU">EU</option>
+    <option value="FE">FE</option>
+  </select>
+
+  <label><strong>Select Marketplace:</strong></label>
+  <select id="marketplace"></select>
+
+  <label><strong>Enter ASINs (space separated):</strong></label>
+  <textarea id="asinInput" rows="4" placeholder="e.g. B07X1KT6LD B08K2S1KZB"></textarea>
+
+  <div class="tool-lists">
+    <div class="tool-list">
+      <h3>Available Tools</h3>
+      <ul id="availableTools" ondragover="allowDrop(event)" ondrop="drop(event, 'available')">
+        <li draggable="true" ondragstart="drag(event)" data-id="blameo">Blame-O</li>
+        <li draggable="true" ondragstart="drag(event)" data-id="timemachine">Time Machine</li>
+        <li draggable="true" ondragstart="drag(event)" data-id="mediacentral">Media Central</li>
+        <li draggable="true" ondragstart="drag(event)" data-id="imagedebugger">Image Debugger</li>
+        <li draggable="true" ondragstart="drag(event)" data-id="bqe">Browse Query Editor</li>
+        <li draggable="true" ondragstart="drag(event)" data-id="vermontorphan">Vermont Orphan</li>
+        <li draggable="true" ondragstart="drag(event)" data-id="vermonteinstein">Vermont Einstein</li>
+        <li draggable="true" ondragstart="drag(event)" data-id="asintool">CSI ASIN Creator</li>
+        <li draggable="true" ondragstart="drag(event)" data-id="marketplacedata">CSI ASIN Marketplace Data</li>
+      </ul>
+    </div>
+
+    <div class="tool-list">
+      <h3>Selected Tools</h3>
+      <ul id="selectedTools" ondragover="allowDrop(event)" ondrop="drop(event, 'selected')"></ul>
+    </div>
+  </div>
+
+  <button onclick="openToolTabs()">Open Selected Tools</button>
+
+  <script src="script.js"></script>
+  <hr>
+  <p style="text-align: center; font-size: 14px; color: #555;">Created by kevilobo</p>
+</body>
+</html>
